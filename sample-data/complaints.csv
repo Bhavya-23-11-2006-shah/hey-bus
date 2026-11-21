@@ -1,0 +1,20 @@
+complaint_id,order_id,date,complaint_text,category
+CMP-30001,ORD-20261,2026-10-30,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30002,ORD-20265,2026-10-24,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30003,ORD-20266,2026-11-08,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30004,ORD-20267,2026-11-10,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30005,ORD-20272,2026-10-25,,damaged
+CMP-30006,ORD-20274,2026-11-03,,damaged
+CMP-30007,ORD-20275,2026-11-03,Delivery was late and arrived after the promised date.,late
+CMP-30008,ORD-20277,2026-11-12,"The product quality is poor, the texture feels off.",quality
+CMP-30009,ORD-20278,2026-11-08,I received the wrong item in my order.,wrong
+CMP-30010,ORD-20282,2026-10-31,Delivery was late and arrived after the promised date.,late
+CMP-30011,ORD-20285,2026-10-30,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30012,ORD-20291,2026-11-10,Delivery was late and arrived after the promised date.,late
+CMP-30013,ORD-20293,2026-11-01,Delivery was late and arrived after the promised date.,late
+CMP-30014,ORD-20294,2026-11-01,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30015,ORD-20295,2026-10-26,"The product quality is poor, the texture feels off.",quality
+CMP-30016,ORD-20305,2026-11-08,Delivery was late and arrived after the promised date.,late
+CMP-30017,ORD-20312,2026-10-30,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30018,ORD-20315,2026-11-07,The outer box arrived crushed and the packaging was torn.,damaged
+CMP-30019,ORD-20320,2026-11-03,Delivery was late and arrived after the promised date.,late

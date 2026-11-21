@@ -1,0 +1,16 @@
+{
+  "name": "opsradar",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OpsRadar — FastAPI detection engine + Next.js contract-validated UI",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:mock": "node scripts/dev.mjs --mock",
+    "backend": "node scripts/dev.mjs --only=backend",
+    "frontend": "node scripts/dev.mjs --only=frontend",
+    "test": "node scripts/dev.mjs --check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

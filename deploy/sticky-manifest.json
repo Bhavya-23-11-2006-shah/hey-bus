@@ -1,0 +1,8 @@
+{
+  "entrypoint": "sticky-worker.js",
+  "compatibilityDate": "2026-11-01",
+  "modules": [
+    { "name": "sticky-worker.js", "type": "esm", "path": "./sticky-worker.js" }
+  ],
+  "assetsDirectory": "../sticky-days"
+}

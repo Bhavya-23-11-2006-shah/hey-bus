@@ -1,0 +1,9 @@
+product_id,product_name,category,warehouse,stock,daily_sales_rate,reorder_level
+SKU-1001,Hydrating Serum,Skincare,WH-North,29,9.3,73
+SKU-1002,Vitamin C Serum,Skincare,WH-North,64,4.1,28
+SKU-1003,Gentle Cleanser,Skincare,WH-North,20,5.9,34
+SKU-1004,Night Cream,Skincare,WH-North,44,9.1,57
+SKU-1005,SPF 50 Sunscreen,Skincare,WH-North,111,10.6,54
+SKU-1006,Retinol Cream,Skincare,WH-North,44,6.2,47
+SKU-1007,Clay Mask,Skincare,WH-North,24,3.8,22
+SKU-1008,Body Lotion,Skincare,WH-North,148,11.7,87

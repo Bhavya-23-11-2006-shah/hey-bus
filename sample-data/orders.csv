@@ -1,0 +1,61 @@
+order_id,customer_id,product_id,product_name,category,order_date,promised_date,warehouse,city,courier,status,quantity,amount
+ORD-20261,CUST-339,SKU-1002,Vitamin C Serum,Skincare,2026-10-29,2026-11-03,WH-North,Manchester,MetroDash,delivered,2,59.0
+ORD-20262,CUST-271,SKU-1001,Hydrating Serum,Skincare,2026-11-12,2026-11-16,WH-South,Bristol,SwiftShip,delivered,1,24.0
+ORD-20263,CUST-291,SKU-1006,Retinol Cream,Skincare,2026-11-17,2026-11-21,WH-Central,Birmingham,CityFreight,pending,1,38.0
+ORD-20264,CUST-292,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-17,2026-11-22,WH-North,London,MetroDash,shipped,3,57.0
+ORD-20265,CUST-297,SKU-1002,Vitamin C Serum,Skincare,2026-10-23,2026-10-26,WH-North,Birmingham,CityFreight,delivered,2,59.0
+ORD-20266,CUST-256,SKU-1002,Vitamin C Serum,Skincare,2026-11-07,2026-11-11,WH-South,London,SwiftShip,delivered,1,29.5
+ORD-20267,CUST-327,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-09,2026-11-12,WH-North,Leeds,CityFreight,delivered,2,38.0
+ORD-20268,CUST-330,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-12,2026-11-15,WH-South,Bristol,CityFreight,delivered,1,19.0
+ORD-20269,CUST-319,SKU-1003,Gentle Cleanser,Skincare,2026-11-07,2026-11-11,WH-South,Bristol,SwiftShip,delivered,1,14.0
+ORD-20270,CUST-240,SKU-1002,Vitamin C Serum,Skincare,2026-11-10,2026-11-14,WH-South,Birmingham,SwiftShip,delivered,1,29.5
+ORD-20271,CUST-329,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-10,2026-11-15,WH-South,London,CityFreight,delivered,2,38.0
+ORD-20272,CUST-261,SKU-1001,Hydrating Serum,Skincare,2026-10-24,2026-10-28,WH-South,Bristol,MetroDash,delivered,3,72.0
+ORD-20273,CUST-254,SKU-1003,Gentle Cleanser,Skincare,2026-10-31,2026-11-04,WH-North,London,MetroDash,delivered,1,14.0
+ORD-20274,CUST-256,SKU-1008,Body Lotion,Skincare,2026-11-02,2026-11-05,WH-North,Leeds,MetroDash,delivered,1,12.0
+ORD-20275,CUST-321,SKU-1006,Retinol Cream,Skincare,2026-11-02,2026-11-05,WH-North,Leeds,MetroDash,delivered,1,38.0
+ORD-20276,CUST-286,SKU-1007,Clay Mask,Skincare,2026-11-16,2026-11-19,WH-Central,Leeds,SwiftShip,shipped,3,49.5
+ORD-20277,CUST-263,SKU-1004,Night Cream,Skincare,2026-11-11,2026-11-15,WH-North,Leeds,ParcelOne,delivered,1,32.0
+ORD-20278,CUST-242,SKU-1002,Vitamin C Serum,Skincare,2026-11-07,2026-11-10,WH-North,Leeds,ParcelOne,delivered,1,29.5
+ORD-20279,CUST-214,SKU-1007,Clay Mask,Skincare,2026-11-13,2026-11-17,WH-South,London,SwiftShip,pending,1,16.5
+ORD-20280,CUST-214,SKU-1006,Retinol Cream,Skincare,2026-11-03,2026-11-06,WH-North,Leeds,ParcelOne,delivered,3,114.0
+ORD-20281,CUST-220,SKU-1004,Night Cream,Skincare,2026-10-31,2026-11-03,WH-Central,Birmingham,CityFreight,delivered,1,32.0
+ORD-20282,CUST-317,SKU-1004,Night Cream,Skincare,2026-10-30,2026-11-03,WH-South,Manchester,MetroDash,delivered,1,32.0
+ORD-20283,CUST-262,SKU-1002,Vitamin C Serum,Skincare,2026-11-08,2026-11-11,WH-North,Leeds,ParcelOne,delivered,1,29.5
+ORD-20284,CUST-226,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-02,2026-11-06,WH-South,Glasgow,ParcelOne,delivered,2,38.0
+ORD-20285,CUST-267,SKU-1003,Gentle Cleanser,Skincare,2026-10-29,2026-11-03,WH-Central,Birmingham,MetroDash,delivered,1,14.0
+ORD-20286,CUST-309,SKU-1001,Hydrating Serum,Skincare,2026-11-05,2026-11-10,WH-Central,Glasgow,CityFreight,delivered,1,24.0
+ORD-20287,CUST-210,SKU-1001,Hydrating Serum,Skincare,2026-11-10,2026-11-14,WH-Central,Birmingham,MetroDash,delivered,1,24.0
+ORD-20288,CUST-245,SKU-1006,Retinol Cream,Skincare,2026-11-12,2026-11-15,WH-South,Bristol,CityFreight,delivered,2,76.0
+ORD-20289,CUST-320,SKU-1007,Clay Mask,Skincare,2026-11-16,2026-11-20,WH-South,Manchester,MetroDash,pending,2,33.0
+ORD-20290,CUST-249,SKU-1004,Night Cream,Skincare,2026-11-12,2026-11-15,WH-Central,Birmingham,CityFreight,delivered,2,64.0
+ORD-20291,CUST-229,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-09,2026-11-12,WH-Central,Bristol,SwiftShip,delivered,2,38.0
+ORD-20292,CUST-311,SKU-1006,Retinol Cream,Skincare,2026-11-13,2026-11-17,WH-Central,London,MetroDash,pending,2,76.0
+ORD-20293,CUST-231,SKU-1004,Night Cream,Skincare,2026-10-31,2026-11-04,WH-Central,Birmingham,CityFreight,delivered,3,96.0
+ORD-20294,CUST-277,SKU-1004,Night Cream,Skincare,2026-10-31,2026-11-05,WH-Central,Bristol,SwiftShip,delivered,3,96.0
+ORD-20295,CUST-243,SKU-1006,Retinol Cream,Skincare,2026-10-25,2026-10-30,WH-Central,Birmingham,SwiftShip,delivered,1,38.0
+ORD-20296,CUST-218,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-04,2026-11-09,WH-North,Manchester,MetroDash,delivered,1,19.0
+ORD-20297,CUST-308,SKU-1007,Clay Mask,Skincare,2026-10-26,2026-10-29,WH-Central,Birmingham,MetroDash,delivered,2,33.0
+ORD-20298,CUST-335,SKU-1001,Hydrating Serum,Skincare,2026-10-25,2026-10-29,WH-South,Bristol,CityFreight,delivered,1,24.0
+ORD-20299,CUST-263,SKU-1007,Clay Mask,Skincare,2026-11-05,2026-11-09,WH-South,Bristol,MetroDash,delivered,2,33.0
+ORD-20300,CUST-220,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-09,2026-11-14,WH-Central,Birmingham,MetroDash,delivered,1,19.0
+ORD-20301,CUST-299,SKU-1004,Night Cream,Skincare,2026-11-18,2026-11-21,WH-North,Leeds,MetroDash,shipped,1,32.0
+ORD-20302,CUST-337,SKU-1007,Clay Mask,Skincare,2026-10-23,2026-10-27,WH-Central,Birmingham,ParcelOne,delivered,2,33.0
+ORD-20303,CUST-336,SKU-1001,Hydrating Serum,Skincare,2026-11-14,2026-11-18,WH-Central,Birmingham,SwiftShip,pending,1,24.0
+ORD-20304,CUST-212,SKU-1007,Clay Mask,Skincare,2026-11-15,2026-11-19,WH-South,Bristol,MetroDash,pending,2,33.0
+ORD-20305,CUST-307,SKU-1007,Clay Mask,Skincare,2026-11-07,2026-11-11,WH-Central,Birmingham,MetroDash,delivered,2,33.0
+ORD-20306,CUST-205,SKU-1006,Retinol Cream,Skincare,2026-11-12,2026-11-15,WH-North,Glasgow,MetroDash,delivered,1,38.0
+ORD-20307,CUST-229,SKU-1004,Night Cream,Skincare,2026-10-27,2026-11-01,WH-Central,Birmingham,MetroDash,delivered,2,64.0
+ORD-20308,CUST-262,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-17,2026-11-22,WH-South,Bristol,ParcelOne,in_transit,2,38.0
+ORD-20309,CUST-309,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-18,2026-11-22,WH-South,Leeds,SwiftShip,in_transit,1,19.0
+ORD-20310,CUST-317,SKU-1002,Vitamin C Serum,Skincare,2026-11-16,2026-11-20,WH-South,Leeds,CityFreight,shipped,2,59.0
+ORD-20311,CUST-319,SKU-1007,Clay Mask,Skincare,2026-11-02,2026-11-06,WH-North,Glasgow,MetroDash,delivered,2,33.0
+ORD-20312,CUST-286,SKU-1002,Vitamin C Serum,Skincare,2026-10-29,2026-11-02,WH-Central,Manchester,SwiftShip,delivered,1,29.5
+ORD-20313,CUST-221,SKU-1006,Retinol Cream,Skincare,2026-11-03,2026-11-06,WH-Central,Glasgow,CityFreight,delivered,1,38.0
+ORD-20314,CUST-256,SKU-1004,Night Cream,Skincare,2026-11-19,2026-11-22,WH-South,Bristol,SwiftShip,shipped,1,32.0
+ORD-20315,CUST-340,SKU-1004,Night Cream,Skincare,2026-11-06,2026-11-11,WH-Central,Birmingham,ParcelOne,delivered,1,32.0
+ORD-20316,CUST-323,SKU-1004,Night Cream,Skincare,2026-11-14,2026-11-17,WH-Central,Birmingham,ParcelOne,pending,2,64.0
+ORD-20317,CUST-232,SKU-1005,SPF 50 Sunscreen,Skincare,2026-11-19,2026-11-24,WH-North,Birmingham,MetroDash,in_transit,1,19.0
+ORD-20318,CUST-226,SKU-1001,Hydrating Serum,Skincare,2026-10-23,2026-10-27,WH-North,Leeds,SwiftShip,delivered,1,24.0
+ORD-20319,CUST-302,SKU-1006,Retinol Cream,Skincare,2026-10-24,2026-10-27,WH-North,Birmingham,CityFreight,delivered,1,38.0
+ORD-20320,CUST-257,SKU-1003,Gentle Cleanser,Skincare,2026-11-02,2026-11-06,WH-North,Birmingham,MetroDash,delivered,1,14.0

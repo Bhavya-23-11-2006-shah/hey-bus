@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset=utf8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Get Sticky Days</title>
+<meta name="description" content="Sticky notes, a calendar and photo memories. Install Sticky Days on your phone — everything stays on the phone.">
+<meta name="theme-color" content="#e8edf5">
+<meta name="theme-color" content="#12151d" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sticky Days">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@500;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8edf5; --dot:#c6d0e2; --surface:#fff; --fg:#1d2230; --muted:#59627a; --line:#c8d0df;
+  --accent:#2f5bff; --on-accent:#fff; --y:#ffe45e; --y-d:#f2cc2a; --p:#ff9ec4; --m:#8fe3b5; --ink:#2a2230;
+  --shadow:0 1px 1px rgba(20,25,45,.14),0 10px 16px -8px rgba(20,25,45,.38);
+  --f-ui:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-hand:'Caveat',cursive; --f-mark:'Permanent Marker','Caveat',cursive;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#12151d; --dot:#252b3c; --surface:#1d2230; --fg:#eaeef7; --muted:#a3abc0; --line:#343c52;
+    --accent:#a3b7ff; --on-accent:#0f1530; --shadow:0 1px 1px rgba(0,0,0,.45),0 12px 18px -8px rgba(0,0,0,.75);
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; color:var(--fg); font:16px/1.5 var(--f-ui);
+  background-color:var(--bg); background-image:radial-gradient(circle,var(--dot) 1.3px,transparent 1.7px);
+  background-size:22px 22px;
+  padding:1.2rem max(16px,env(safe-area-inset-left,0px)) 3rem max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-mark);font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,8vw,3rem)}
+h2{font-size:1.35rem;margin-bottom:.5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.head{display:flex;align-items:center;gap:1rem;margin:.4rem 0 1.4rem}
+.head img{width:64px;height:64px;border-radius:14px;box-shadow:var(--shadow);flex:none}
+.tag{color:var(--muted);font-weight:700;margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.1rem 1.2rem;box-shadow:var(--shadow);margin:1rem 0}
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;border:1px solid var(--line);
+  background:var(--surface);color:var(--fg);padding:.75rem 1.2rem;font:800 1rem var(--f-ui);text-decoration:none;
+}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.big{padding:.9rem 1.5rem;font-size:1.05rem}
+.steps{list-style:none;padding:0;margin:.8rem 0 0;display:grid;gap:.7rem;counter-reset:s}
+.steps li{display:flex;gap:.7rem;align-items:flex-start}
+.steps li::before{
+  counter-increment:s; content:counter(s); flex:none; width:1.7rem;height:1.7rem;border-radius:50%;
+  background:var(--y);color:var(--ink);font:800 .9rem/1.7rem var(--f-ui);text-align:center;
+}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.93rem}
+.note-strip{display:flex;gap:.6rem;flex-wrap:wrap;margin:.2rem 0 0}
+.mini{
+  font-family:var(--f-hand);font-size:1.25rem;color:var(--ink);padding:.55rem .8rem .6rem;
+  background:linear-gradient(180deg,var(--y-d) 0 .32rem,var(--y) .32rem);box-shadow:var(--shadow);
+  transform:rotate(-1.4deg);min-width:8rem;
+}
+.mini.p{background:linear-gradient(180deg,#f27bab 0 .32rem,var(--p) .32rem);transform:rotate(1.2deg)}
+.mini.m{background:linear-gradient(180deg,#62cc93 0 .32rem,var(--m) .32rem);transform:rotate(-.6deg)}
+.answer{border-left:4px solid var(--accent);padding-left:.9rem;margin:.9rem 0}
+.apk-card{border:2px solid var(--accent)}
+.apk-card .btn{width:100%;justify-content:center;margin-top:.2rem}
+.answer h3{font-size:1.1rem;margin-top:.9rem}
+.yes{color:#1f7a4d;font-weight:800} .no{color:#a81d37;font-weight:800}
+@media (prefers-color-scheme:dark){.yes{color:#6ee7a8}.no{color:#ff9aae}}
+details{margin-top:.6rem}
+summary{cursor:pointer;font-weight:800}
+.small{font-size:.88rem;color:var(--muted)}
+.toast{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:1.2rem;background:var(--fg);color:var(--bg);
+  padding:.6rem 1rem;border-radius:999px;font-weight:800;font-size:.9rem;box-shadow:var(--shadow);z-index:9;
+}
+.toast[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <img src="icons/icon-192.png" alt="Sticky Days icon" width="64" height="64">
+    <div>
+      <h1>Sticky Days</h1>
+      <p class="tag">Sticky notes, a calendar and photo memories — on your phone.</p>
+    </div>
+  </div>
+
+  <div class="card apk-card">
+    <h2>Install the app on Android</h2>
+    <p>The real app file. One tap to download, then tap the steps below — about a minute.</p>
+    <a class="btn primary big" href="Sticky-Days.apk" download>Download Sticky-Days.apk</a>
+    <ol class="steps">
+      <li><div><b>Tap the blue download button</b><span>Do this on the phone itself, not on a computer.</span></div></li>
+      <li><div><b>Tap “Open” on the download notice</b><span>If it is gone, use the Downloads app and tap Sticky-Days.apk.</span></div></li>
+      <li><div><b>If Android says “not allowed”, tap “Settings”</b><span>Turn on “Allow from this source”, then press back. This is a one-time permission.</span></div></li>
+      <li><div><b>Tap “Install”</b><span>If Play Protect warns about an unknown app, choose “Install anyway”.</span></div></li>
+      <li><div><b>Tap “Open”</b><span>Done — the yellow pin icon is in your app drawer from now on.</span></div></li>
+    </ol>
+    <p class="small">Your notes, plans and photos stay inside the app on this phone. iPhone cannot install this file — on iPhone use “Add to Home Screen” further down.</p>
+  </div>
+
+  <div class="note-strip" aria-hidden="true">
+    <div class="mini">call the plumber</div>
+    <div class="mini p">birthday on 14th</div>
+    <div class="mini m">photos from last summer</div>
+  </div>
+
+  <div class="card">
+    <h2>Put it on this phone</h2>
+    <p id="intro">It installs like an app: own icon on the home screen, opens full screen, works with no internet. Your notes, plans and photos are saved on the phone only — nothing is uploaded.</p>
+    <div class="cta">
+      <button id="install" class="btn primary big" type="button" hidden>Install app</button>
+      <a class="btn big" href="./">Open Sticky Days</a>
+    </div>
+    <p id="installed" class="small" hidden>Already installed — open it from the home-screen icon.</p>
+  </div>
+
+  <div class="card" id="steps-ios" hidden>
+    <h2>On iPhone / iPad</h2>
+    <ol class="steps">
+      <li><div><b>Open this page in Safari</b><span>Chrome and other browsers on iPhone cannot add apps.</span></div></li>
+      <li><div><b>Tap the Share button</b><span>The square with the arrow, at the bottom of the screen.</span></div></li>
+      <li><div><b>Choose “Add to Home Screen”</b><span>Scroll the share sheet to find it, then tap “Add”.</span></div></li>
+    </ol>
+    <p class="small">The pin icon appears on the home screen and opens Sticky Days full screen.</p>
+  </div>
+
+  <div class="card" id="steps-android" hidden>
+    <h2>On Android</h2>
+    <ol class="steps">
+      <li><div><b>Tap “Install app” above</b><span>If the button is not there, open the ⋮ menu in Chrome.</span></div></li>
+      <li><div><b>Choose “Install app” or “Add to Home screen”</b><span>Then confirm with “Install”.</span></div></li>
+      <li><div><b>Open it from the home screen</b><span>It opens without the browser bars, and works offline.</span></div></li>
+    </ol>
+  </div>
+
+  <div class="card" id="steps-desktop" hidden>
+    <h2>On a computer</h2>
+    <p>Open the app and use the install icon in the address bar (Chrome or Edge), or just keep using it in the browser — it works the same. To move it to a phone, open this page on the phone itself.</p>
+  </div>
+
+  <div class="card">
+    <h2>“Can I download it as an app file?”</h2>
+    <div class="answer">
+      <h3><span class="no">iPhone / iPad — no.</span></h3>
+      <p>Apple does not allow installing an app file (.ipa) from a website. The only way onto an iPhone home screen is <b>Add to Home Screen</b> from Safari, which is what the iPhone steps further down this page do. A real App Store app would need a Mac, Xcode and a paid Apple developer account.</p>
+      <h3><span class="yes">Android — yes. The .apk is ready.</span></h3>
+      <p>Sticky Days is packaged as a real Android app file — <a href="Sticky-Days.apk" download>Sticky-Days.apk</a>, download and install steps at the top of this page.</p>
+      <p class="small">The app carries its own copy of Sticky Days, so it opens instantly and keeps the notes and photos inside the app on this phone. Updating to a newer file later keeps the data — only uninstalling or clearing app data erases it. Play Store publishing is a separate step and needs a Google developer account.</p>
+      <details>
+        <summary>Keep a copy of the app file</summary>
+        <p>The whole app is one HTML file. <a href="Sticky-Days">Download Sticky-Days</a> to keep a backup — it opens in any browser. It is a backup copy, not the installed app: a file opened from storage does not keep its notes as reliably as the installed icon does.</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="small">Nothing here is stored on a server. Notes live in this phone’s browser storage; photos live in its own database. Deleting the app or clearing browser data deletes them, so keep the backup copy if the notes matter.</p>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script>
+(function(){
+  'use strict';
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+  var show = function(id){ var el = document.getElementById(id); if (el) el.hidden = false; };
+  if (isIOS) show('steps-ios');
+  else if (isAndroid) show('steps-android');
+  else show('steps-desktop');
+
+  if (standalone) {
+    var inst = document.getElementById('installed');
+    if (inst) inst.hidden = false;
+  }
+
+  var btn = document.getElementById('install');
+  var toastEl = document.getElementById('toast');
+  var toastT = 0;
+  function toast(msg){
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ toastEl.hidden = true; }, 3200);
+  }
+
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferred = e;
+    if (btn) btn.hidden = false;
+  });
+
+  if (btn) {
+    btn.addEventListener('click', function(){
+      if (deferred) {
+        deferred.prompt();
+        deferred.userChoice.then(function(res){
+          if (res && res.outcome === 'accepted') toast('Installing…');
+          else toast('Install cancelled — you can try again any time.');
+        }).catch(function(){});
+        deferred = null;
+        return;
+      }
+      if (isIOS) toast('In Safari: Share → Add to Home Screen');
+      else if (isAndroid) toast('Chrome menu ⋮ → Install app');
+      else toast('Use the install icon in the address bar');
+    });
+
+    if (window.matchMedia('(display-mode: standalone)').matches) btn.hidden = true;
+    else if (isAndroid) btn.hidden = false;
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>
